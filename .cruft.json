@@ -1,0 +1,16 @@
+{
+  "template": "https://github.com/guppy0130/krew-plugin-template.git",
+  "commit": "3aa5e7fd866f4fc94872117d07d2a7f5a434244b",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "plugin_name": "quadlet",
+      "project_slug": "kubectl-quadlet",
+      "user": "guppy0130",
+      "description": "create quadlet files from kubernetes manifests",
+      "use_codecov": true,
+      "_template": "https://github.com/guppy0130/krew-plugin-template.git"
+    }
+  },
+  "directory": null
+}

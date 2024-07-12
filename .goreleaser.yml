@@ -1,0 +1,48 @@
+version: 2
+project_name: "kubectl-quadlet"
+
+release:
+  github:
+    owner: "guppy0130"
+    name: "kubectl-quadlet"
+
+builds:
+  - id: "kubectl-quadlet"
+    goos:
+      - "linux"
+      - "darwin"
+      - "windows"
+    goarch:
+      - "amd64"
+      - "arm64"
+    goarm:
+      - "7"
+    env:
+      - CGOENABLED=0
+      - GO111MODULE=on
+    main: ./cmd/kubectl-quadlet/main.go
+    ldflags:
+      - -s -w
+
+archives:
+  - format: "tar.gz"
+    id: "kubectl-quadlet"
+    builds:
+      - "kubectl-quadlet"
+
+brews:
+  - repository:
+      owner: "guppy0130"
+      name: "kubectl-quadlet"
+    homepage: "https://github.com/guppy0130/kubectl-quadlet"
+    description: "create quadlet files from kubernetes manifests"
+    directory: "Formula"
+
+krews:
+  - name: "quadlet"
+    short_description: "create quadlet files from kubernetes manifests"
+    description: "create quadlet files from kubernetes manifests"
+    homepage: "https://github.com/guppy0130/kubectl-quadlet"
+    repository:
+      owner: "guppy0130"
+      name: "kubectl-quadlet"
