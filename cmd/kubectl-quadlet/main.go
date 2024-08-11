@@ -145,7 +145,7 @@ func (q *QuadletOptions) Run(f cmdutil.Factory) error {
 		unit.NewUnitOption(quadlet.UnitGroup, "Description", deploymentName),
 		unit.NewUnitOption(quadlet.KubeGroup, quadlet.KeyYaml, filepath.Join(q.OutputDir, deploymentName, yamlOutputFile)),
 		// TODO: figure out if start on boot is desirable
-		unit.NewUnitOption(quadlet.InstallGroup, "WantedBy", "multi-user.target"),
+		unit.NewUnitOption(quadlet.InstallGroup, "WantedBy", "default.target"),
 	)
 	for containerPort, hostPort := range containerToHostPortMappings {
 		// TODO: figure out if should listen on all interfaces
