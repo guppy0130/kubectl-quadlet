@@ -141,7 +141,6 @@ func (q *QuadletOptions) Run(f cmdutil.Factory) error {
 
 	unitOptions = append(
 		unitOptions,
-		unit.NewUnitOption(quadlet.UnitGroup, "Name", deploymentName),
 		unit.NewUnitOption(quadlet.UnitGroup, "Description", deploymentName),
 		unit.NewUnitOption(quadlet.KubeGroup, quadlet.KeyYaml, filepath.Join(q.OutputDir, deploymentName, yamlOutputFile)),
 		// TODO: figure out if start on boot is desirable
